@@ -28,7 +28,7 @@
                             <select name="customer" id="customer" class="form-select">
                                 {% for customer in customers %}
                                 <option value="{{ customer.id }}" {% if customer.id == offer.customer.id %}selected{% endif %}>
-                                    {{ customer.username }}
+                                    {{ customer.name }}
                                 </option>
                                 {% endfor %}
                             </select>

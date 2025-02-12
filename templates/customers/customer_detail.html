@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Customer Detail{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Header Section -->
+    <div class="row my-4 align-items-center">
+        <div class="col-md-6">
+            <h2 class="mb-0">Customer #{{ customer.id }}</h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a href="{% url 'customer_create' %}" class="btn btn-success">Create New Customer</a>
+            <a href="{% url 'customer_edit' customer.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'customer_list' %}" class="btn btn-secondary">Back to Customers</a>
+        </div>
+    </div>
+    <!-- Customer Information -->
+    <div class="row my-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Company Information</h5>
+                    <p class="card-text"><strong>Company Name:</strong> {{ customer.name }}</p>
+                    <p class="card-text"><strong>VAT ID:</strong> {{ customer.vat_id }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Address Details -->
+    <div class="row my-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Address Details</h5>
+                    <p class="card-text"><strong>Street:</strong> {{ customer.street }}</p>
+                    <p class="card-text"><strong>City:</strong> {{ customer.city }}</p>
+                    <p class="card-text"><strong>Country:</strong> {{ customer.country }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
